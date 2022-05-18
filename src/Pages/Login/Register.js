@@ -4,7 +4,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -39,7 +39,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="grid justify-center items-center h-[80vh]">
+    <div className="grid justify-center items-center h-screen">
       <div className=" card w-96 bg-base-100 shadow-xl">
         <h2 className="text-3xl font-semibold text-center my-4">Register</h2>
         <form onSubmit={handleSignup} className="py-4 px-3 space-y-4">
@@ -76,6 +76,11 @@ const Login = () => {
             className="input input-bordered w-full"
           />
           {errorMessage && <p className="text-error">{errorMessage}</p>}
+          <p>
+            <small>
+              Already have an account? <Link to="/login" className="text-blue-400">click here</Link>
+            </small>
+          </p>
 
           <input type="submit" value="Register" className="btn" />
         </form>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../Shared/Navbar";
 
 const Home = () => {
   const [noteBox, setNoteBox] = useState(true);
@@ -6,19 +7,18 @@ const Home = () => {
     e.preventDefault();
     // data collect from here
 
-    const title = e.target.title.value
-    const desc = e.target.desc.value
-    const todoData = {title, desc}
+    const title = e.target.title.value;
+    const desc = e.target.desc.value;
+    const todoData = { title, desc };
     console.log(todoData);
-
-
 
     // close todo app
     setNoteBox(true);
   };
   return (
     <div>
-      <h1 className="text-4xl text-center my-5 font-semibold">Shopping Keep</h1>
+      <Navbar />
+      <h1 className="text-4xl text-center my-5 font-semibold">Shopping Todo</h1>
 
       {/* todo data input from here */}
       <div className="shadow-2xl p-5 w-[450px] mt-16 mx-auto rounded-md">
@@ -34,7 +34,7 @@ const Home = () => {
         ) : (
           <form
             onSubmit={handleTodo}
-            className="mx-auto flex flex-col items-center w-full max-w-lg"
+            className="mx-auto flex flex-col space-y-3 items-center w-full max-w-lg"
           >
             <input
               type="text"

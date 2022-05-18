@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className=" w-11/12 mx-auto">
         <div className="flex-1">
           <Link to="/" className="btn btn-ghost normal-case text-xl">
-            daisyUI
+            Shopping ToDo
           </Link>
         </div>
         <div className="flex-none gap-2">
