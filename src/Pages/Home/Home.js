@@ -15,9 +15,9 @@ const Home = () => {
     isLoading,
     refetch,
   } = useQuery(["todoData", user], () =>
-    fetch(`http://localhost:5000/todolists/${user?.email}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://shahrear-todo-app.herokuapp.com/todolists/${user?.email}`
+    ).then((res) => res.json())
   );
 
   const handleTodo = (e) => {
@@ -30,7 +30,7 @@ const Home = () => {
     const complete = false;
     const todoData = { email, title, desc, complete };
     if (title || desc) {
-      fetch("http://localhost:5000/todolists", {
+      fetch("https://shahrear-todo-app.herokuapp.com/todolists", {
         method: "POST",
         headers: {
           "content-type": "application/json",

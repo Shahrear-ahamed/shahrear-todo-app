@@ -5,7 +5,7 @@ const SingleTodo = ({ todo, refetch }) => {
 
   const updatedData = { email, title, desc, complete: true };
   const handleComplete = () => {
-    fetch(`http://localhost:5000/todolists/${_id}`, {
+    fetch(`hhttps://shahrear-todo-app.herokuapp.com/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -20,7 +20,7 @@ const SingleTodo = ({ todo, refetch }) => {
       });
   };
   const handleDelete = () => {
-    fetch(`http://localhost:5000/todolists/${_id}`, {
+    fetch(`https://shahrear-todo-app.herokuapp.com/${_id}`, {
       method: "Delete",
     })
       .then((res) => res.json())
