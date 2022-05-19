@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import userProfile from '../../assets/user_profile.png';
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -22,8 +23,8 @@ const Navbar = () => {
                 <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     <img
-                      src="https://Linkpi.lorem.space/image/face?hash=33791"
-                      alt=""
+                      src={userProfile}
+                      alt="user profile"
                     />
                   </div>
                 </label>
@@ -34,11 +35,7 @@ const Navbar = () => {
                   <li>
                     <Link to="/" className="justify-between">
                       Profile
-                      <span className="badge">New</span>
                     </Link>
-                  </li>
-                  <li>
-                    <Link to="/">Settings</Link>
                   </li>
                   <li>
                     <button

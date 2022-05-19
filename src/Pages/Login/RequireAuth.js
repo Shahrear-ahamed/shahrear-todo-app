@@ -2,16 +2,13 @@ import React from "react";
 import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, useLocation } from "react-router-dom";
+import Loading from '../Shared/Loading';
 
 const RequireAuth = ({ children }) => {
   const [user, loading] = useAuthState(auth);
   let location = useLocation();
   if(loading){
-    return (
-      <div className="grid justify-center h-[80vh] items-center">
-        <button className="btn btn-square loading"></button>
-      </div>
-    );
+    return <Loading />
   }
 
   if (!user) {
