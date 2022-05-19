@@ -5,7 +5,7 @@ const SingleTodo = ({ todo, refetch }) => {
 
   const updatedData = { email, title, desc, complete: true };
   const handleComplete = () => {
-    fetch(`hhttps://shahrear-todo-app.herokuapp.com/${_id}`, {
+    fetch(`https://shahrear-todo-app.herokuapp.com/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
